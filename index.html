@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Fathy | Full-stack .NET Developer</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,11 +14,21 @@
     <nav id="navbar">
         <div class="container nav-container">
             <div class="logo">M.<span>Fathy</span></div>
+            
+            <!-- Hamburger Menu for Mobile -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="nav-socials-mobile">
+                    <a href="https://www.linkedin.com/in/mohamed-fathii-5291a4188/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/mohmedfathii" target="_blank"><i class="fab fa-github"></i></a>
+                </li>
             </ul>
             <div class="nav-socials">
                 <a href="https://www.linkedin.com/in/mohamed-fathii-5291a4188/" target="_blank" class="nav-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
@@ -34,14 +42,13 @@
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="hero-text">
-                <div class="location-tag">
-                    <i class="fas fa-map-marker-alt"></i> Cairo, Egypt
-                </div>
+                <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Cairo, Egypt</div>
                 <h1>Mohamed Fathy Nagdy</h1>
                 <h2>Full-stack <span class="highlight">.NET Developer</span></h2>
                 <p>Building high-performance, scalable web applications with .NET 8 and Angular 19. Passionate about clean code and modern architecture.</p>
                 <div class="hero-btns">
-                    <a href="https://drive.google.com/file/d/1o7p_-H_8uswcinPS8cIpwaHxMJEP3eeu/view?usp=sharing" download class="btn primary">View CV <i class="fas fa-download"></i></a>
+                    <!-- Trigger for Popup -->
+                    <button id="view-cv-btn" class="btn primary">View CV <i class="fas fa-eye"></i></button>
                 </div>
             </div>
             <div class="hero-image">
@@ -57,13 +64,13 @@
             <div class="experience-card reveal">
                 <div class="exp-header">
                     <div class="company-info">
-                        <img src="https://cdn-icons-png.flaticon.com/512/2620/2620738.png" alt="Company Icon" class="company-logo">
+                        <i class="fas fa-briefcase company-icon-dev"></i>
                         <div>
                             <h3>National Technology</h3>
                             <p class="role">Full-stack .NET Developer</p>
                         </div>
                     </div>
-                    <span class="date-badge">2024 - Present</span>
+                    <span class="date-badge">5/2025 - Present</span>
                 </div>
                 <div class="exp-body">
                     <ul>
@@ -93,7 +100,7 @@
                         <h3>Smart-Meeting-Summarizer</h3>
                         <p>Built an <strong>AI-powered</strong> meeting summarization system using <strong>.NET 8</strong> enabling users to upload recordings and automatically extract summaries and actionable insights via background processing and scalable architecture </p>
                         <div class="project-btns">
-                            <a href="#" class="btn-sm github-btn"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/mohmedfathii/meetingSummary" class="btn-sm github-btn"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
@@ -141,6 +148,23 @@
             </div>
         </div>
     </section>
+
+   <!-- CV MODAL (POPUP) -->
+<div id="cv-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        
+        <!-- This will show on Desktop -->
+        <iframe src="Mohamed_Fathy_Cv.pdf" width="100%" height="100%" id="cv-frame"></iframe>
+        
+        <!-- This will be a backup for Mobile/Tablets -->
+        <div class="modal-mobile-view">
+            <i class="fas fa-file-pdf" style="font-size: 50px; color: #e74c3c; margin-bottom: 20px;"></i>
+            <p>PDF preview is not supported on mobile devices.</p>
+            <a href="Mohamed_Fathy_Cv.pdf" target="_blank" class="btn primary">Open CV in New Tab</a>
+        </div>
+    </div>
+</div>
 
     <footer>
         <p>&copy; 2024 Mohamed Fathy Nagdy | Built with Passion.</p>

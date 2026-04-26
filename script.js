@@ -53,3 +53,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // Run reveal once on load to show elements already in view
 reveal();
+// 1. Mobile Menu Toggle
+const menuToggle = document.getElementById('mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('active'));
+});
+
+// 2. CV Modal Logic
+const modal = document.getElementById("cv-modal");
+const btn = document.getElementById("view-cv-btn");
+const span = document.getElementsByClassName("close-modal")[0];
+
+// Open Modal
+btn.onclick = function() {
+    modal.style.display = "block";
+    document.body.style.overflow = "hidden"; // Stop background scrolling
+}
+
+// Close Modal (X button)
+span.onclick = function() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+}
+
+// Close Modal (Clicking outside)
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
